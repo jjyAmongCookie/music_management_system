@@ -26,7 +26,9 @@ CREATE TABLE `albums` (
   `album_id` char(8) NOT NULL,
   `album_name` varchar(20) NOT NULL,
   `singer_id` char(8) DEFAULT NULL,
-  PRIMARY KEY (`album_id`)
+  PRIMARY KEY (`album_id`),
+  KEY `singer_id` (`singer_id`),
+  CONSTRAINT `albums_ibfk_1` FOREIGN KEY (`singer_id`) REFERENCES `singers` (`singer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -60,6 +62,29 @@ CREATE TABLE `composers` (
 LOCK TABLES `composers` WRITE;
 /*!40000 ALTER TABLE `composers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `composers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lyricwritters`
+--
+
+DROP TABLE IF EXISTS `lyricwritters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `lyricwritters` (
+  `lyricwritter_id` char(8) NOT NULL,
+  `lyricwritter_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`lyricwritter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lyricwritters`
+--
+
+LOCK TABLES `lyricwritters` WRITE;
+/*!40000 ALTER TABLE `lyricwritters` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lyricwritters` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -100,8 +125,14 @@ CREATE TABLE `songs` (
   `song_name` varchar(20) DEFAULT NULL,
   `singer_id` char(8) DEFAULT NULL,
   `composer_id` char(8) DEFAULT NULL,
-  `songwritter_id` char(8) DEFAULT NULL,
-  PRIMARY KEY (`song_id`)
+  `lyricwritter_id` char(8) DEFAULT NULL,
+  PRIMARY KEY (`song_id`),
+  KEY `singer_id` (`singer_id`),
+  KEY `composer_id` (`composer_id`),
+  KEY `lyricwritter_id` (`lyricwritter_id`),
+  CONSTRAINT `songs_ibfk_1` FOREIGN KEY (`singer_id`) REFERENCES `singers` (`singer_id`),
+  CONSTRAINT `songs_ibfk_2` FOREIGN KEY (`composer_id`) REFERENCES `composers` (`composer_id`),
+  CONSTRAINT `songs_ibfk_3` FOREIGN KEY (`lyricwritter_id`) REFERENCES `lyricwritters` (`lyricwritter_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -113,29 +144,6 @@ LOCK TABLES `songs` WRITE;
 /*!40000 ALTER TABLE `songs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `songs` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `songwritters`
---
-
-DROP TABLE IF EXISTS `songwritters`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `songwritters` (
-  `songwritter_id` char(8) NOT NULL,
-  `songwritter_name` varchar(20) NOT NULL,
-  PRIMARY KEY (`songwritter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `songwritters`
---
-
-LOCK TABLES `songwritters` WRITE;
-/*!40000 ALTER TABLE `songwritters` DISABLE KEYS */;
-/*!40000 ALTER TABLE `songwritters` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -146,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-11  0:02:52
+-- Dump completed on 2019-12-11  9:18:04

@@ -11,7 +11,7 @@ from django.db import models
 class Albums(models.Model):
     album_id = models.CharField(primary_key=True, max_length=8)
     album_name = models.CharField(max_length=20)
-    singer_id = models.CharField(max_length=8, blank=True, null=True)
+    singer = models.ForeignKey('Singers', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -25,6 +25,15 @@ class Composers(models.Model):
     class Meta:
         managed = False
         db_table = 'composers'
+
+
+class Lyricwritters(models.Model):
+    lyricwritter_id = models.CharField(primary_key=True, max_length=8)
+    lyricwritter_name = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'lyricwritters'
 
 
 class Singers(models.Model):
@@ -42,19 +51,10 @@ class Singers(models.Model):
 class Songs(models.Model):
     song_id = models.CharField(primary_key=True, max_length=8)
     song_name = models.CharField(max_length=20, blank=True, null=True)
-    singer_id = models.CharField(max_length=8, blank=True, null=True)
-    composer_id = models.CharField(max_length=8, blank=True, null=True)
-    songwritter_id = models.CharField(max_length=8, blank=True, null=True)
+    singer = models.ForeignKey(Singers, models.DO_NOTHING, blank=True, null=True)
+    composer = models.ForeignKey(Composers, models.DO_NOTHING, blank=True, null=True)
+    lyricwritter = models.ForeignKey(Lyricwritters, models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'songs'
-
-
-class Songwritters(models.Model):
-    songwritter_id = models.CharField(primary_key=True, max_length=8)
-    songwritter_name = models.CharField(max_length=20)
-
-    class Meta:
-        managed = False
-        db_table = 'songwritters'
