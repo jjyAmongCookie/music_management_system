@@ -30,3 +30,9 @@ def album(request):
     # context = {'latest_question_list': latest_question_list}
     context={'singers_list':singers_list}
     return render(request, 'music/album.html', context)
+
+def song(request):
+    singers_list = models.Singers.objects.order_by('-singer_name')[:5]
+    # context = {'latest_question_list': latest_question_list}
+    context={'singers_list':singers_list}
+    return render(request, 'music/song.html', context)
