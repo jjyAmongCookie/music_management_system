@@ -127,7 +127,7 @@
     <div class="container-fluid animatedParent">
             <!-- col-lg-12表示在大屏幕中占12列, text_center实现块元素居中显示 -->
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">专辑上新</h2>
+                <h2 class="section-heading">热门专辑</h2>
             </div>
         <div class="col-md-12 text-center">
             <ul class="cat-list">
@@ -135,114 +135,110 @@
                 <li><button class="filter" data-filter=".category-1">流形乐</button></li>
                 <li> <button class="filter" data-filter=".category-2">乡村乐</button></li>
                 <li> <button class="filter" data-filter=".category-3">摇滚乐</button></li>
-                <li> <button class="filter" data-filter=".category-4">布鲁斯</button></li>
+                <li> <button class="filter" data-filter=".category-4">原声带</button></li>
             </ul>
         </div>
         <div class="animated bounceInUp slowest">
             <div id="container">
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="4">
-                    <a href="" class="portfolio-link">
+
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-2" data-value="4">
+                    <a href="album/?search_text=red" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography1</p>
-                                <h4>Level Agency</h4>
+                                <p>Red</p>
+                                <h4>泰勒斯威夫特</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/dreams.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/red.jpg' %}" class="img-responsive" alt="">
                     </a>
-
                 </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2" data-value="8">
-                    <a href="" class="portfolio-link">
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="8">
+                    <a href="album/?search_text=床边故事" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography2</p>
-                                <h4>Level Agency</h4>
+                                <p>床边故事</p>
+                                <h4>周杰伦</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/dreams-preview.png'%}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/chuangbiangushi.jpg'%}" class="img-responsive" alt="">
                     </a>
-
                 </div>
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-3" data-value="3">
+                    <a href="album/?search_text=怒放的生命" class="portfolio-link" >
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>怒放的生命</p>
+                                <h4>汪峰</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/nufangdeshengming.jpg'%}" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-4 " data-value="1">
+                    <a href="album/?search_text=frozen2" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>frozen2</p>
+                                <h4>电影-冰雪奇缘2</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/frozen2.jpg'%}" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-4" data-value="6">
+                    <a href="album/?search_text=五十度灰" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>五十度灰</p>
+                                <h4>电影-五十度灰</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/wushiduhui.jpg'%}" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="7">
+                    <a href="album/?search_text=异类" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>异类</p>
+                                <h4>华晨宇</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/yilei.jpg'%}" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="2">
+                    <a href="album/?search_text=第七感" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>第七感</p>
+                                <h4>张靓颖</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/diqigan.jpg'%}" class="img-responsive" alt="">
+                    </a>
+                </div>
+
                 <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="3">
-                    <a href="" class="portfolio-link" >
+                    <a href="album/?search_text=新的心跳" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography3</p>
-                                <h4>Level Agency</h4>
+                                <p>新的心跳</p>
+                                <h4>邓紫棋</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/golden.png'%}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/xindexintiao.jpg'%}" class="img-responsive" alt="">
                     </a>
-
                 </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2 category-1" data-value="1">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography4</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/roundicons.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2 category-1 category-3" data-value="6">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography5</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/roundicons-free.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-3 category-2 category-4" data-value="7">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography6</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/escape.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-3 category-4 category-2" data-value="2">
-                    <a href="#" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography7</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/startup-framework.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-4 category-3" data-value="3">
-                    <a href="#" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography8</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/treehouse.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-
             </div>
-
         </div>
-        <!--<div class="button-area">-->
-            <!--<a href="" class="btn btn-bottom btn-primary">Load More</a>-->
-        <!--</div>-->
     </div>
 </section>
 
@@ -338,7 +334,6 @@
     <!--</div>-->
 <!--</section>-->
 
-<!-- Team Section -->
 <section id="team" class="our-team">
     <div class="container">
         <div class="row">
@@ -349,11 +344,12 @@
         <div class="row">
             <div id="owl-demo" class="owl-carousel">
                 <div class="col-sm-4">
+                    <a href="singer/?search_text=周杰伦">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>周杰伦</h4>
+                                <p class="text-muted">中国</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -365,16 +361,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{%static 'music/images/team/1.jpg'%}" class="img-responsive lazyOwl" alt="">
-
+                        <img src="{%static 'music/images/singer/zhoujielun.jpg'%}" class="img-responsive lazyOwl" alt="" >
                     </div>
+                        </a>
                 </div>
+                <a href="singer/?search_text=泰勒">
                 <div class="col-sm-4">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>泰勒.艾莉森.斯威夫特</h4>
+                                <p class="text-muted">美国</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -386,16 +383,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/team/2.jpg'%}" class="img-responsive lazyOwl" alt="">
+                        <img src="{% static 'music/images/singer/taylor.jpg'%}" class="img-responsive lazyOwl" alt="">
 
                     </div>
                 </div>
+                </a>
+                <a href="singer/?search_text=花泽香菜">
                 <div class="col-sm-4">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>花泽香菜</h4>
+                                <p class="text-muted">日本</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -407,16 +406,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/team/3.jpg' %}" class="img-responsive lazyOwl" alt="">
+                        <img src="{% static 'music/images/singer/huazexiangcai.jpg' %}" class="img-responsive lazyOwl" alt="">
 
                     </div>
                 </div>
+                </a>
+                <a href="singer/?search_text=邓紫棋">
                 <div class="col-sm-4">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>邓紫棋</h4>
+                                <p class="text-muted">中国香港</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -428,16 +429,17 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/team/1.jpg'%}" class="img-responsive lazyOwl" alt="">
-
+                        <img src="{% static 'music/images/singer/dengziqi.jpg'%}" class="img-responsive lazyOwl" alt="">
                     </div>
                 </div>
+                </a>
+                <a href="singer/?search_text=华晨宇">
                 <div class="col-sm-4">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>华晨宇</h4>
+                                <p class="text-muted">中国</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -449,16 +451,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/team/2.jpg' %}" class="img-responsive lazyOwl" alt="">
+                        <img src="{% static 'music/images/singer/huachenyu.jpg' %}" class="img-responsive lazyOwl" alt="">
 
                     </div>
                 </div>
+                </a>
+                <a href="singer/?search_text=张靓颖">
                 <div class="col-sm-4">
                     <div class="team-member item">
                         <div class="team-hover">
                             <div class="team-hover-content">
-                                <h4>Kay Garland</h4>
-                                <p class="text-muted">Lead Designer</p>
+                                <h4>张靓颖</h4>
+                                <p class="text-muted">中国</p>
                                 <ul class="list-inline social-buttons">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a>
                                     </li>
@@ -470,31 +474,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/team/3.jpg'%}" class="img-responsive lazyOwl" alt="">
-
+                        <img src="{% static 'music/images/singer/zhangliangying.jpg'%}" class="img-responsive lazyOwl" alt="">
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="team-member item">
-                        <div class="team-hover">
-                            <div class="team-hover-content">
-                                <h4>Diana Pertersen</h4>
-                                <p class="text-muted">Lead Developer</p>
-                                <ul class="list-inline social-buttons">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                                    </li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/team/3.jpg'%}" class="img-responsive lazyOwl" alt="">
-
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
