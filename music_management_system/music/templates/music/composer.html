@@ -74,12 +74,45 @@
 <br/>
 <br/>
 <section id="search" >
-    <div class="search-box">
-        <input type="text" placeholder="请在这里输入内容" /><span></span>
-    </div>
+    <form action="" method="get">
+        <div class="search-box">
+            <input type="text" name="search_text" placeholder="请在这里输入内容"/><span></span>
+        </div>
+    </form>
     <script src="{% static 'music/js/search.js'%}"></script>
 </section>
 </center>
+
+{% if search_result %}
+<section id="search-results">
+    {% ifequal search_result|first "N" %}
+    <p>No results</p>
+    {% else %}
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>国籍</th>
+                <th>出生地</th>
+                <th>出生日期</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in search_result %}
+            <tr>
+                <td>{{r.composer_name}}</td>
+                <td>{{r.composer_nationality}}</td>
+                <td>{{r.composer_birthplace}}</td>
+                <td>{{r.composer_birth}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endifequal %}
+</section>
+{% endif %}
 
 <!-- Team Section -->
 <section id="team" class="our-team">

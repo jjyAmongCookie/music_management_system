@@ -1,0 +1,121 @@
+/*** Table Styles **/
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+.table-fill p{
+    font-weight:300;
+    font-size:40 px;
+}
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  max-width: 1000px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+
+.table-fill th {
+  font-family: Raleway, sans-serif;
+  color:#343a45;
+  background:#F0E5DE;
+  border-right:1px solid #C1C3D1;
+/*   border-right: 1px solid #F0E5DE; */
+/*   border-left: 1px solid #F0E5DE; */
+/*   border-left: 1px solid #FFFFFF; */
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+  width:auto;
+  height:20px;
+}
+
+.table-fill th:first-child {
+  border-top-left-radius:3px;
+}
+
+.table-fill th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+
+.table-fill tr {
+  border-top: 1px solid #fbfad3;
+  border-bottom-: 1px solid #cdeeaa;
+  color:#292929;
+  font-size:16px;
+  font-weight:normal;
+  /*text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);*/
+}
+
+.table-fill tr:hover td {
+  background:#fbfad3;
+  color:#C1C3D1;
+  border-top: 1px solid #22262e;
+}
+
+.table-fill tr:first-child {
+  border-top:none;
+}
+
+.table-fill tr:last-child {
+  border-bottom:none;
+}
+
+.table-fill tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+
+
+.table-fill tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+
+.table-fill tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+
+.table-fill td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+  height:5px;
+}
+
+.table-fill td:last-child {
+  border-right: 0px;
+}
+
+.table-fill th.text-left {
+  text-align: left;
+}
+
+.table-fill th.text-center {
+  text-align: center;
+}
+
+.table-fill th.text-right {
+  text-align: right;
+}
+
+.table-fill td.text-left {
+  text-align: left;
+}
+
+.table-fill td.text-center {
+  text-align: center;
+}
+
+.table-fill td.text-right {
+  text-align: right;
+}

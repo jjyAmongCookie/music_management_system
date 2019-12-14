@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'music_management_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': os.path.join(BASE_DIR, 'music.sql'),
         'NAME':'music',
-        # 'NAME':'singers',
         'USER':'root',
-        'PASSWORD':'123'
+        'PASSWORD':'123',
+        # 'HOST':'localhost',
+        # 'PORT':'3308'
     }
 }
 

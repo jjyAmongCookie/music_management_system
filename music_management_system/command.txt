@@ -1,0 +1,3 @@
+create database fifa;
+use fifa;
+source #PATH of SQL file#

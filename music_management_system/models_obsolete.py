@@ -21,9 +21,6 @@ class Albums(models.Model):
         managed = False
         db_table = 'albums'
 
-    def __str__(self):
-        return self.album_name
-
 
 class Composers(models.Model):
     composer_id = models.CharField(primary_key=True, max_length=8)
@@ -36,9 +33,6 @@ class Composers(models.Model):
         managed = False
         db_table = 'composers'
 
-    def __str__(self):
-        return self.composer_name
-
 
 class Lyricists(models.Model):
     lyricist_id = models.CharField(primary_key=True, max_length=8)
@@ -50,8 +44,6 @@ class Lyricists(models.Model):
     class Meta:
         managed = False
         db_table = 'lyricists'
-    def __str__(self):
-        return self.lyricist_name
 
 
 class Singers(models.Model):
@@ -67,8 +59,6 @@ class Singers(models.Model):
     class Meta:
         managed = False
         db_table = 'singers'
-    def __str__(self):
-        return self.singer_name
 
 
 class Songs(models.Model):
@@ -83,5 +73,3 @@ class Songs(models.Model):
     class Meta:
         managed = False
         db_table = 'songs'
-    def __str__(self):
-        return self.song_name

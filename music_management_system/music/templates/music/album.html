@@ -74,12 +74,49 @@
 <br/>
 <br/>
 <section id="search" >
-    <div class="search-box">
-        <input type="text" placeholder="请在这里输入内容" /><span></span>
-    </div>
+    <form action="" method="get">
+        <div class="search-box">
+            <input type="text" name="search_text" placeholder="请在这里输入内容"/><span></span>
+        </div>
+    </form>
     <script src="{% static 'music/js/search.js'%}"></script>
 </section>
 </center>
+
+{% if search_result %}
+<section id="search-results">
+    {% ifequal search_result|first "N" %}
+    <p>No results</p>
+    {% else %}
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>专辑名</th>
+                <th>语言</th>
+                <th>唱片公司</th>
+                <th>发行时间</th>
+                <th>唱片类型</th>
+                <th>歌手名（待改）</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in search_result %}
+            <tr>
+                <td>{{r.album_name}}</td>
+                <td>{{r.album_language}}</td>
+                <td>{{r.record_company}}</td>
+                <td>{{r.publish_date}}</td>
+                <td>{{r.album_type}}</td>
+                <td>pass</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endifequal %}
+</section>
+{% endif %}
 
 <section id="portfolio">
     <div class="container-fluid animatedParent">

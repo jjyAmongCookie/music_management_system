@@ -1,10 +1,14 @@
 <!doctype html>
 <!--载入静态文件-->
 {% load static %}
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <!--网页编码-->
     <meta charset="utf-8">
@@ -19,9 +23,10 @@
     <!--字体-->
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <!--载入静态样式表-->
-     <link rel="stylesheet"href="{% static 'music/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/table_style.css' %}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.theme.css'%}"	>
+    <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.theme.css'%}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.transitions.css' %}">
     <link rel="stylesheet" href="{% static 'music/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'music/css/main.css' %}">
@@ -39,7 +44,8 @@
 <div class="preloader"></div>
 
 <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header表示对主页的介绍 -->
@@ -48,14 +54,14 @@
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
             <!--导航栏-->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-                <ul class="nav navbar-nav text-center" >
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav text-center">
                     <li><a href="{% url 'index' %}">>主页</a></li>
                     <!--<li> <a href="/music/index.html"></a></li>-->
                     <li><a href="{% url 'singer' %}">歌手</a></li>
                     <li><a href="{% url 'album' %}">专辑</a></li>
                     <!--<li class="logo-holder">-->
-                        <!--<a href="index.html"><img src="{% static 'music/images/logos/logo.png'%}" alt=""></a>-->
+                    <!--<a href="index.html"><img src="{% static 'music/images/logos/logo.png'%}" alt=""></a>-->
                     <!--</li>-->
                     <li><a href="{% url 'lyricist' %}">作词人</a></li>
                     <li><a href="{% url 'composer' %}">作曲人</a></li>
@@ -72,15 +78,53 @@
 
 <center>
     <br/>
-<br/>
-<br/>
-<section id="search" >
-    <div class="search-box">
-        <input type="text" placeholder="请在这里输入内容" /><span></span>
+    <br/>
+    <br/>
+    <section id="search">
+        <form action="" method="get">
+            <div class="search-box">
+                <input type="text" name="search_text" placeholder="请在这里输入内容"/><span></span>
+            </div>
+        </form>
+        <script src="{% static 'music/js/search.js'%}"></script>
+    </section>
+</center>
+
+{% if search_result %}
+<center>
+<section id="search-results">
+    {% ifequal search_result|first "N" %}
+    <p>No results</p>
+    {% else %}
+    <div class="table-responsive">
+        <table class="table-fill">
+            <tr>
+                <th>姓名</th>
+                <th>国籍</th>
+                <th>星座</th>
+                <th>身高</th>
+                <th>体重</th>
+                <th>出生地</th>
+                <th>出生日期</th>
+            </tr>
+            {% for r in search_result %}
+            <tr>
+                <td>{{r.singer_name}}</td>
+                <td>{{r.singer_nationality}}</td>
+                <td>{{r.singer_constellation}}</td>
+                <td>{{r.singer_height}}</td>
+                <td>{{r.singer_weight}}</td>
+                <td>{{r.singer_birthplace}}</td>
+                <td>{{r.singer_birth}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br/>
     </div>
-    <script src="{% static 'music/js/search.js'%}"></script>
+    {% endifequal %}
 </section>
 </center>
+{% endif %}
 
 <!-- Team Section -->
 <section id="team" class="our-team">
@@ -267,7 +311,7 @@
             <div class="col-md-4">
 
                 <div class="circle footer-images">
-                    <img src="{% static 'music/images/address.png'%}" alt="" >
+                    <img src="{% static 'music/images/address.png'%}" alt="">
                 </div>
 
                 <h4>地址</h4>
@@ -316,7 +360,6 @@
         </div>
     </div>
 </footer>
-
 
 
 <!-- jQuery -->
