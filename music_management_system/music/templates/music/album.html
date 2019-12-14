@@ -98,7 +98,7 @@
                 <th>唱片公司</th>
                 <th>发行时间</th>
                 <th>唱片类型</th>
-                <th>歌手名（待改）</th>
+                <th>歌手名</th>
             </tr>
             {% for r in search_result %}
             <tr>
@@ -107,7 +107,7 @@
                 <td>{{r.record_company}}</td>
                 <td>{{r.publish_date}}</td>
                 <td>{{r.album_type}}</td>
-                <td>pass</td>
+                <td>{{r.singer_name}}</td>
             </tr>
             {% endfor %}
         </table>
@@ -130,104 +130,104 @@
                 <li><button class="filter" data-filter=".category-1">流形乐</button></li>
                 <li> <button class="filter" data-filter=".category-2">乡村乐</button></li>
                 <li> <button class="filter" data-filter=".category-3">摇滚乐</button></li>
-                <li> <button class="filter" data-filter=".category-4">布鲁斯</button></li>
+                <li> <button class="filter" data-filter=".category-4">原声带</button></li>
             </ul>
         </div>
         <div class="animated bounceInUp slowest">
             <div id="container">
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="4">
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-2" data-value="4">
                     <a href="" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography1</p>
-                                <h4>Level Agency</h4>
+                                <p>Red</p>
+                                <h4>泰勒斯威夫特</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/dreams.png' %}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/red.jpg' %}" class="img-responsive" alt="">
                     </a>
 
                 </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2" data-value="8">
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="8">
                     <a href="" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography2</p>
-                                <h4>Level Agency</h4>
+                                <p>床边故事</p>
+                                <h4>周杰伦</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/dreams-preview.png'%}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/chuangbiangushi.jpg'%}" class="img-responsive" alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-3" data-value="3">
+                    <a href="" class="portfolio-link" >
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>怒放的生命</p>
+                                <h4>汪峰</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/nufangdeshengming.jpg'%}" class="img-responsive" alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-4 " data-value="1">
+                    <a href="" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>frozen2</p>
+                                <h4>电影-冰雪奇缘2</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/frozen2.jpg'%}" class="img-responsive" alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-4" data-value="6">
+                    <a href="" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>五十度灰</p>
+                                <h4>电影-五十度灰</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/wushiduhui.jpg'%}" class="img-responsive" alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="7">
+                    <a href="" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>异类</p>
+                                <h4>华晨宇</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/yilei.jpg'%}" class="img-responsive" alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="2">
+                    <a href="#" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <p>第七感</p>
+                                <h4>张靓颖</h4>
+                            </div>
+                        </div>
+                        <img src="{% static 'music/images/album/diqigan.jpg'%}" class="img-responsive" alt="">
                     </a>
 
                 </div>
                 <div class="col-md-3 col-sm-6 portfolio-item mix category-1" data-value="3">
-                    <a href="" class="portfolio-link" >
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography3</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/golden.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2 category-1" data-value="1">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography4</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/roundicons.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-2 category-1 category-3" data-value="6">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography5</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/roundicons-free.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-3 category-2 category-4" data-value="7">
-                    <a href="" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography6</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/escape.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-3 category-4 category-2" data-value="2">
                     <a href="#" class="portfolio-link">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
-                                <p>Photography7</p>
-                                <h4>Level Agency</h4>
+                                <p>新的心跳</p>
+                                <h4>邓紫棋</h4>
                             </div>
                         </div>
-                        <img src="{% static 'music/images/portfolio/startup-framework.png'%}" class="img-responsive" alt="">
-                    </a>
-
-                </div>
-                <div class="col-md-3 col-sm-6 portfolio-item mix category-4 category-3" data-value="3">
-                    <a href="#" class="portfolio-link">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <p>Photography8</p>
-                                <h4>Level Agency</h4>
-                            </div>
-                        </div>
-                        <img src="{% static 'music/images/portfolio/treehouse.png'%}" class="img-responsive" alt="">
+                        <img src="{% static 'music/images/album/xindexintiao.jpg'%}" class="img-responsive" alt="">
                     </a>
 
                 </div>

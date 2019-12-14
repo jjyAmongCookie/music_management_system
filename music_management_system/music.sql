@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS `composers`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `composers` (
   `composer_id` char(8) NOT NULL,
-  `composer_name` varchar(20) NOT NULL,
+  `composer_name` varchar(30) NOT NULL,
   `composer_nationality` varchar(20) DEFAULT NULL,
   `composer_birthplace` varchar(20) DEFAULT NULL,
   `composer_birth` date DEFAULT NULL,
@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `lyricists`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `lyricists` (
   `lyricist_id` char(8) NOT NULL,
-  `lyricist_name` varchar(20) NOT NULL,
+  `lyricist_name` varchar(30) NOT NULL,
   `lyricist_nationality` varchar(20) DEFAULT NULL,
   `lyricist_birthplace` varchar(20) DEFAULT NULL,
   `lyricist_birth` date DEFAULT NULL,
@@ -109,7 +109,7 @@ DROP TABLE IF EXISTS `singers`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `singers` (
   `singer_id` char(8) NOT NULL,
-  `singer_name` varchar(20) NOT NULL,
+  `singer_name` varchar(30) NOT NULL,
   `singer_nationality` varchar(20) DEFAULT NULL,
   `singer_constellation` varchar(10) DEFAULT NULL,
   `singer_height` decimal(4,1) DEFAULT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `singers` (
 
 LOCK TABLES `singers` WRITE;
 /*!40000 ALTER TABLE `singers` DISABLE KEYS */;
-INSERT INTO `singers` VALUES ('00000398','vpydhkn',NULL,NULL,NULL,NULL,NULL,NULL),('00000592','kdjlisc',NULL,NULL,NULL,NULL,NULL,NULL),('00001131','ajpbzor',NULL,NULL,NULL,NULL,NULL,NULL),('00001134','vigwoml',NULL,NULL,NULL,NULL,NULL,NULL),('00001598','uaqhexz',NULL,NULL,NULL,NULL,NULL,NULL),('00001953','oigtvhr',NULL,NULL,NULL,NULL,NULL,NULL),('00002014','jnpgorh',NULL,NULL,NULL,NULL,NULL,NULL),('00002705','nvogwqj',NULL,NULL,NULL,NULL,NULL,NULL),('00002878','jlxvtbw',NULL,NULL,NULL,NULL,NULL,NULL),('00003116','fghveqj',NULL,NULL,NULL,NULL,NULL,NULL),('00003284','therkja',NULL,NULL,NULL,NULL,NULL,NULL),('00003563','qxldigz',NULL,NULL,NULL,NULL,NULL,NULL),('00003597','zgwyfat',NULL,NULL,NULL,NULL,NULL,NULL),('00003878','bizerst',NULL,NULL,NULL,NULL,NULL,NULL),('00004715','inctxjy',NULL,NULL,NULL,NULL,NULL,NULL),('00005117','tsgmjik',NULL,NULL,NULL,NULL,NULL,NULL),('00005255','metdvck',NULL,NULL,NULL,NULL,NULL,NULL),('00005854','hqoxafz',NULL,NULL,NULL,NULL,NULL,NULL),('00006260','nyvgqac',NULL,NULL,NULL,NULL,NULL,NULL),('00006289','hyucigt',NULL,NULL,NULL,NULL,NULL,NULL),('00006296','lzobjhk',NULL,NULL,NULL,NULL,NULL,NULL),('00007391','hpvyxem',NULL,NULL,NULL,NULL,NULL,NULL),('00007688','ptlejux',NULL,NULL,NULL,NULL,NULL,NULL),('00008045','dkhzspy',NULL,NULL,NULL,NULL,NULL,NULL),('00008270','yliztkx',NULL,NULL,NULL,NULL,NULL,NULL),('00009016','eylpskc',NULL,NULL,NULL,NULL,NULL,NULL),('00009042','xgthplu',NULL,NULL,NULL,NULL,NULL,NULL),('00009112','qevwsju',NULL,NULL,NULL,NULL,NULL,NULL),('00009170','pxvsjym',NULL,NULL,NULL,NULL,NULL,NULL),('00009958','cahmptr',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `singers` VALUES ('00000001','周杰伦','中国台湾','魔羯座',175.0,NULL,'台湾省新北市','1979-01-18'),('00000002','泰勒.艾莉森.斯威夫特','美国','射手座',180.0,56.0,'宾夕法尼法州雷丁','1989-12-13'),('00000003','花泽香菜','日本','双鱼座',156.7,45.0,'东京都','1989-02-25'),('00000004','邓紫棋','中国','狮子座',160.0,47.0,'上海','1991-08-16'),('00000398','vpydhkn',NULL,NULL,NULL,NULL,NULL,NULL),('00000592','kdjlisc',NULL,NULL,NULL,NULL,NULL,NULL),('00001131','ajpbzor',NULL,NULL,NULL,NULL,NULL,NULL),('00001134','vigwoml',NULL,NULL,NULL,NULL,NULL,NULL),('00001598','uaqhexz',NULL,NULL,NULL,NULL,NULL,NULL),('00001953','oigtvhr',NULL,NULL,NULL,NULL,NULL,NULL),('00002014','jnpgorh',NULL,NULL,NULL,NULL,NULL,NULL),('00002705','nvogwqj',NULL,NULL,NULL,NULL,NULL,NULL),('00002878','jlxvtbw',NULL,NULL,NULL,NULL,NULL,NULL),('00003116','fghveqj',NULL,NULL,NULL,NULL,NULL,NULL),('00003284','therkja',NULL,NULL,NULL,NULL,NULL,NULL),('00003563','qxldigz',NULL,NULL,NULL,NULL,NULL,NULL),('00003597','zgwyfat',NULL,NULL,NULL,NULL,NULL,NULL),('00003878','bizerst',NULL,NULL,NULL,NULL,NULL,NULL),('00004715','inctxjy',NULL,NULL,NULL,NULL,NULL,NULL),('00005117','tsgmjik',NULL,NULL,NULL,NULL,NULL,NULL),('00005255','metdvck',NULL,NULL,NULL,NULL,NULL,NULL),('00005854','hqoxafz',NULL,NULL,NULL,NULL,NULL,NULL),('00006260','nyvgqac',NULL,NULL,NULL,NULL,NULL,NULL),('00006289','hyucigt',NULL,NULL,NULL,NULL,NULL,NULL),('00006296','lzobjhk',NULL,NULL,NULL,NULL,NULL,NULL),('00007391','hpvyxem',NULL,NULL,NULL,NULL,NULL,NULL),('00007688','ptlejux',NULL,NULL,NULL,NULL,NULL,NULL),('00008045','dkhzspy',NULL,NULL,NULL,NULL,NULL,NULL),('00008270','yliztkx',NULL,NULL,NULL,NULL,NULL,NULL),('00009016','eylpskc',NULL,NULL,NULL,NULL,NULL,NULL),('00009042','xgthplu',NULL,NULL,NULL,NULL,NULL,NULL),('00009112','qevwsju',NULL,NULL,NULL,NULL,NULL,NULL),('00009170','pxvsjym',NULL,NULL,NULL,NULL,NULL,NULL),('00009958','cahmptr',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `singers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ DROP TABLE IF EXISTS `songs`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `songs` (
   `song_id` char(8) NOT NULL,
-  `song_name` varchar(20) DEFAULT NULL,
+  `song_name` varchar(30) NOT NULL,
   `publish_year` char(4) DEFAULT NULL,
   `singer_id` char(8) DEFAULT NULL,
   `composer_id` char(8) DEFAULT NULL,
@@ -176,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-13 21:42:55
+-- Dump completed on 2019-12-14 20:24:15

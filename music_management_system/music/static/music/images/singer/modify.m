@@ -1,0 +1,10 @@
+clear;
+clc;
+file_path='C:\Users\jjy\Desktop\web\music_management_system\music\static\music\images\song\';
+file_name='zhuimengchizixin.jpg';
+cat_file=strcat(file_path,file_name);
+image=imread(cat_file);
+height=370;
+width=420;
+out=imresize(image,[height,width]);
+imwrite(out,cat_file);
