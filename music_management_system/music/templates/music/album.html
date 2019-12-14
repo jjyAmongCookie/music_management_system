@@ -20,6 +20,7 @@
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <!--载入静态样式表-->
      <link rel="stylesheet"href="{% static 'music/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/table_style.css' %}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.theme.css'%}"	>
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.transitions.css' %}">
@@ -50,10 +51,10 @@
             <!--导航栏-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                 <ul class="nav navbar-nav text-center" >
-                    <li><a href="{% url 'index' %}">>主页</a></li>
+                    <li><a href="{% url 'index' %}">主页</a></li>
                     <!--<li> <a href="/music/index.html"></a></li>-->
                     <li><a href="{% url 'singer' %}">歌手</a></li>
-                    <li><a href="{% url 'album' %}">专辑</a></li>
+                    <li><a href="{% url 'album' %}">>专辑</a></li>
                     <!--<li class="logo-holder">-->
                         <!--<a href="index.html"><img src="{% static 'music/images/logos/logo.png'%}" alt=""></a>-->
                     <!--</li>-->
@@ -84,13 +85,13 @@
 </center>
 
 {% if search_result %}
+<center>
 <section id="search-results">
     {% ifequal search_result|first "N" %}
     <p>No results</p>
     {% else %}
     <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead>
+        <table class="table-fill">
             <tr>
                 <th>专辑名</th>
                 <th>语言</th>
@@ -99,8 +100,6 @@
                 <th>唱片类型</th>
                 <th>歌手名（待改）</th>
             </tr>
-            </thead>
-            <tbody>
             {% for r in search_result %}
             <tr>
                 <td>{{r.album_name}}</td>
@@ -111,11 +110,12 @@
                 <td>pass</td>
             </tr>
             {% endfor %}
-            </tbody>
         </table>
+        <br/>
     </div>
     {% endifequal %}
 </section>
+</center>
 {% endif %}
 
 <section id="portfolio">

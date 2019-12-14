@@ -20,6 +20,7 @@
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <!--载入静态样式表-->
      <link rel="stylesheet"href="{% static 'music/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/table_style.css' %}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.theme.css'%}"	>
     <link rel="stylesheet" href="{% static 'music/owl-carousel/owl.transitions.css' %}">
@@ -50,7 +51,7 @@
             <!--导航栏-->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                 <ul class="nav navbar-nav text-center" >
-                    <li><a href="{% url 'index' %}">>主页</a></li>
+                    <li><a href="{% url 'index' %}">主页</a></li>
                     <!--<li> <a href="/music/index.html"></a></li>-->
                     <li><a href="{% url 'singer' %}">歌手</a></li>
                     <li><a href="{% url 'album' %}">专辑</a></li>
@@ -58,7 +59,7 @@
                         <!--<a href="index.html"><img src="{% static 'music/images/logos/logo.png'%}" alt=""></a>-->
                     <!--</li>-->
                     <li><a href="{% url 'lyricist' %}">作词人</a></li>
-                    <li><a href="{% url 'composer' %}">作曲人</a></li>
+                    <li><a href="{% url 'composer' %}">>作曲人</a></li>
                     <li><a href="{% url 'song' %}">歌曲</a></li>
                 </ul>
             </div>
@@ -84,21 +85,19 @@
 </center>
 
 {% if search_result %}
+<center>
 <section id="search-results">
     {% ifequal search_result|first "N" %}
     <p>No results</p>
     {% else %}
     <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead>
+        <table class="table-fill">
             <tr>
                 <th>姓名</th>
                 <th>国籍</th>
                 <th>出生地</th>
                 <th>出生日期</th>
             </tr>
-            </thead>
-            <tbody>
             {% for r in search_result %}
             <tr>
                 <td>{{r.composer_name}}</td>
@@ -107,11 +106,12 @@
                 <td>{{r.composer_birth}}</td>
             </tr>
             {% endfor %}
-            </tbody>
         </table>
+        <br/>
     </div>
     {% endifequal %}
 </section>
+</center>
 {% endif %}
 
 <!-- Team Section -->
